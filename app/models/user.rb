@@ -12,6 +12,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
+  has_many :microposts, dependent: :destroy
   before_save :create_remember_token
   
   validates :name, presence: true, length: {maximum: 50}
@@ -24,6 +25,11 @@ class User < ActiveRecord::Base
   
   validates :password, length: {minimum: 6}
   validates :password_confirmation, presence: true
+  
+  def feed
+    #This is preliminary. See "following users" for the full implementation.
+    Micropost.where("user_id=?", id)
+  end
   
   private
     def create_remember_token
