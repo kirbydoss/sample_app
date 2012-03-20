@@ -6,7 +6,7 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1> 
-      <p><small><%= @user.microposts.count %> Posts</small></p>
+      <p><small><%= pluralize(@user.microposts.count, "Post") %></small></p>
     </section>
     <section class="followify">
       <section>
