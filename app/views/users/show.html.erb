@@ -6,7 +6,7 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1> 
-      <%= @user.email %>
+      <p><small><%= @user.microposts.count %> Posts</small></p>
     </section>
     <section class="followify">
       <section>
@@ -18,7 +18,7 @@
   <div class="span8">
     
     <% if @user.microposts.any? %>
-    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+    <h3><%= @user.name.possessive %> Posts:</h3>
     <ol class="microposts">
       <%= render @microposts %>
     </ol>

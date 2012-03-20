@@ -23,11 +23,6 @@ describe Micropost do
     it {should_not be_valid}
   end
   
-  describe "with content that is too long" do
-    before {@micropost.content = "a" * 141}
-    it {should_not be_valid}
-  end
-
   describe "from_users_followed_by" do
     let(:user) {FactoryGirl.create(:user)}
     let(:other_user) {FactoryGirl.create(:user)}
