@@ -120,3 +120,45 @@ aside {
     margin-bottom:5px;
   }
 }
+
+//sidebar
+.stats {
+  overflow:auto;
+  width:143px;
+  float:left;
+  a {
+    float:left;
+    padding:0 10px;
+    border-left:1px solid $grayLighter;
+    border-right:1px solid $grayLighter;
+    color:gray;
+    text-align:center;
+    &:first-child {
+      padding-left:0;
+      border:0;
+    }
+    &:hover {
+      text-decoration:none;
+      color:$blue;
+    }
+  }
+  strong {
+    display:block;
+    }
+}
+.user_avatars {
+  overflow:auto;
+  margin-top:10px;
+  .gravatar {
+    margin:1px 1px;
+  }
+}
+#follow_form {
+  float:left;
+  width:75px;
+}
+section.followify section {
+  width:238px;
+  margin:0 auto;
+  border:0;
+}
